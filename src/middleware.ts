@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-import { sessionOptions as appRouterClientComponentRouteHandlerSwrIronOptions } from "./app/app-router-client-component-route-handler-swr/lib";
-import { sessionOptions as pagesRouterApiRouteSwrIronOptions } from "./pages-components/pages-router-api-route-swr/lib";
+import { sessionOptions as appRouterClientComponentRouteHandlerSwrIronOptions } from "@/lib/sessionOptions";
+import { sessionOptions as pagesRouterApiRouteSwrIronOptions } from "@/lib/sessionOptions";
 import { cookies } from "next/headers";
 import { SessionOptions, getIronSession } from "iron-session";
 
@@ -22,6 +22,7 @@ const sessionOptions: Record<string, SessionOptions> = {
 // This function can be marked `async` if using `await` inside
 export async function middleware(request: NextRequest) {
   const session = await getIronSession<SessionData>(
+    // @ts-ignore
     cookies(),
     sessionOptions[request.nextUrl.pathname],
   );

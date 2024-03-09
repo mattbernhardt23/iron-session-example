@@ -1,8 +1,8 @@
 "use client";
 
 import * as css from "@/app/css";
-import useSession from "./use-session";
-import { defaultSession } from "./lib";
+import useSession from "@/hooks/useSession";
+import { defaultSession } from "@/lib/sessionOptions";
 
 export function Form() {
   const { session, isLoading } = useSession();

@@ -5,7 +5,7 @@ import { getIronSession } from "iron-session";
 import {
   SessionData,
   sessionOptions,
-} from "@/pages-components/pages-router-api-route-swr/lib";
+} from "@/lib/sessionOptions";
 import Link from "next/link";
 import type { InferGetServerSidePropsType, GetServerSideProps } from "next";
 

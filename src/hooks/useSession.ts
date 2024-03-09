@@ -1,8 +1,9 @@
 import useSWR from "swr";
-import { SessionData, defaultSession } from "./lib";
+import { SessionData, defaultSession } from "@/lib/sessionOptions";
 import useSWRMutation from "swr/mutation";
 
-const sessionApiRoute = "/api/pages-router-api-route-swr/session";
+const sessionApiRoute =
+  "/app-router-client-component-route-handler-swr/session";
 
 async function fetchJson<JSON = unknown>(
   input: RequestInfo,

@@ -3,7 +3,7 @@ import * as css from "@/app/css";
 
 import { cookies } from "next/headers";
 import { getIronSession } from "iron-session";
-import { SessionData, sessionOptions } from "../lib";
+import { SessionData, sessionOptions } from "@/lib/sessionOptions";
 import Link from "next/link";
 
 // Broken: None of these parameters is working, thus we have caching issues
@@ -12,6 +12,7 @@ export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
 async function getSession() {
+  // @ts-ignore
   const session = await getIronSession<SessionData>(cookies(), sessionOptions);
   return session;
 }

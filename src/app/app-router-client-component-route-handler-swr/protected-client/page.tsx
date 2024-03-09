@@ -1,7 +1,7 @@
 "use client";
 
 import { Title } from "@/app/title";
-import useSession from "../use-session";
+import useSession from "@/hooks/useSession";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import * as css from "@/app/css";
