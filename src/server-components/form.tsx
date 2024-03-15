@@ -13,7 +13,7 @@ export function Form() {
         return (
             <>
                 <p className="text-lg">
-                    Logged in user: <strong>{session.username}</strong>
+                    Logged in user: <strong>{session.email}</strong>
                 </p>
                 <LogoutButton />
             </>
@@ -31,11 +31,16 @@ function LoginForm() {
             onSubmit={function (event) {
                 event.preventDefault();
                 const formData = new FormData(event.currentTarget);
-                const username = formData.get("username") as string;
-                login(username, {
+                const email = formData.get("email") as string;
+                const password = formData.get("password") as string;
+                const loginObject = {
+                    email,
+                    password
+                }
+                login(loginObject, {
                     optimisticData: {
                         isLoggedIn: true,
-                        username,
+                        loginObject,
                     },
                 });
             }}
@@ -43,13 +48,27 @@ function LoginForm() {
             className={css.form}
         >
             <label className="block text-lg">
-                <span className={css.label}>Username</span>
+                <span className={css.label}>Email</span>
                 <input
                     type="text"
-                    name="username"
+                    name="email"
                     className={css.input}
                     placeholder=""
-                    defaultValue="Alison"
+                    defaultValue="bigdog@runallday.com"
+                    required
+                    // for demo purposes, disabling autocomplete 1password here
+                    autoComplete="off"
+                    data-1p-ignore
+                />
+            </label>
+            <label className="block text-lg">
+                <span className={css.label}>Password</span>
+                <input
+                    type="text"
+                    name="password"
+                    className={css.input}
+                    placeholder=""
+                    defaultValue="HugoMyGuy"
                     required
                     // for demo purposes, disabling autocomplete 1password here
                     autoComplete="off"

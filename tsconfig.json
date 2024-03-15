@@ -24,8 +24,8 @@
       "@components/*": ["src/app/components/*"],
       "@hooks/*": ["src/hooks/*"],
       "@lib/*": ["src/lib/*"],
-      "@models/*": ["src/app/models/*"],
-      "@server-components/*": ["src/components-server/*"]
+      "@models/*": ["src/models/*"],
+      "@server-components/*": ["src/server-components/*"]
     },
     "composite": true
   },

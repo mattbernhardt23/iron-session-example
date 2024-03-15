@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Navbar, Footer } from "@/server-components/common";
 import "./globals.css";
 import Fathom from "./fathom";
 
@@ -18,8 +19,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <Navbar />
         <Fathom />
-        {children}
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );

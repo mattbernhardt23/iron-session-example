@@ -2,7 +2,7 @@ import Link from "next/link";
 import * as css from "@/app/css";
 
 // import { Form } from "../../app/app-router-client-component-route-handler-swr/form";
-import { Form } from "@server-components/form";
+import { Form } from "@/server-components/form";
 import { Title } from "@/app/title";
 import { GetTheCode } from "@/get-the-code";
 import Head from "next/head";

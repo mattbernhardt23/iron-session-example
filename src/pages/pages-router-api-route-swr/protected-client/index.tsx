@@ -36,7 +36,7 @@ function Content() {
   return (
     <div className="max-w-xl space-y-2">
       <p>
-        Hello <strong>{session.username}!</strong>
+        Hello <strong>{session.email}!</strong>
       </p>
       <p>
         This page is protected and can only be accessed if you are logged in.

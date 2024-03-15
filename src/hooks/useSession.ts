@@ -2,9 +2,11 @@ import useSWR from "swr";
 import { SessionData, defaultSession } from "@/lib/sessionOptions";
 import useSWRMutation from "swr/mutation";
 
+// const sessionApiRoute =
+//   "/app-router-client-component-route-handler-swr/session";
 const sessionApiRoute =
-  "/app-router-client-component-route-handler-swr/session";
-
+  "/api/user/session";
+ 
 async function fetchJson<JSON = unknown>(
   input: RequestInfo,
   init?: RequestInit,
@@ -18,12 +20,18 @@ async function fetchJson<JSON = unknown>(
   }).then((res) => res.json());
 }
 
-function doLogin(url: string, { arg }: { arg: string }) {
+interface LoginObject {
+  email: string;
+  password: string;
+}
+
+function doLogin(url: string, { arg }: { arg: LoginObject }) {
   return fetchJson<SessionData>(url, {
     method: "POST",
-    body: JSON.stringify({ username: arg }),
+    body: JSON.stringify({ email: arg.email, password: arg.password }),
   });
 }
+
 
 function doLogout(url: string) {
   return fetchJson<SessionData>(url, {
@@ -40,10 +48,7 @@ export default function useSession() {
     },
   );
 
-  const { trigger: login } = useSWRMutation(sessionApiRoute, doLogin, {
-    // the login route already provides the updated information, no need to revalidate
-    revalidate: false,
-  });
+  const { trigger: login } = useSWRMutation(sessionApiRoute, doLogin);
   const { trigger: logout } = useSWRMutation(sessionApiRoute, doLogout);
 
   return { session, logout, login, isLoading };
