@@ -18,10 +18,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`relative min-h-screen ${inter.className}`}>
         <Navbar />
         <Fathom />
-        <main>{children}</main>
+        <main className={inter.className}>{children}</main>
         <Footer />
       </body>
     </html>

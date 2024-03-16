@@ -20,6 +20,39 @@ async function fetchJson<JSON = unknown>(
   }).then((res) => res.json());
 }
 
+interface RegisterObject {
+    email: String;
+    password: String;
+    admin: Boolean;
+    contributor: Boolean;
+    moderator: Boolean;
+    name: String;
+    bio: String;
+    birthdate: Date;
+    city: String;
+    state: String;
+    country: String;
+}
+
+function doRegister(url: string, { arg } : { arg : RegisterObject }){
+  return fetchJson<SessionData>(url, {
+    method: "POST",
+    body: JSON.stringify({ 
+      email: arg.email, 
+      password: arg.password,
+      admin: arg.admin,
+      contributor: arg.contributor,
+      moderator: arg.moderator,
+      name: arg.name,
+      bio: arg.bio,
+      birthdate: arg.birthdate,
+      city: arg.city,
+      state: arg.state,
+      country: arg.country,
+    }),
+  });
+}
+
 interface LoginObject {
   email: string;
   password: string;
@@ -49,7 +82,8 @@ export default function useSession() {
   );
 
   const { trigger: login } = useSWRMutation(sessionApiRoute, doLogin);
+  const { trigger: register } = useSWRMutation("/api/user/register", doRegister);
   const { trigger: logout } = useSWRMutation(sessionApiRoute, doLogout);
 
-  return { session, logout, login, isLoading };
+  return { session, logout, register, login, isLoading };
 }

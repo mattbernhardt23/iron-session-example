@@ -1,11 +1,13 @@
 export default function Footer() {
     return (
-        <section>
-            <div className="relative py-2">
-                <nav className="relative" aria-label="Global">
-                    <div>This is the Footer</div>
-                </nav>
+        <footer>
+            <div className="absolute bottom-0 w-full py-2">
+                <div className="container mx-auto">
+                    <div className="flex flex-row items-center">
+                        <div className="text-white text-sm text-primary-2 font-bold">Footer</div>
+                    </div>
+                </div>
             </div>
-        </section>
+        </footer>
     );
 }

@@ -2,6 +2,8 @@ import type { AppProps } from "next/app";
 import React, { useEffect } from "react";
 import Router from "next/router";
 import * as Fathom from "fathom-client";
+import { Navbar, Footer } from "@/server-components/common";
+
 
 import "@/app/globals.css";
 
@@ -22,8 +24,10 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   }, []);
 
   return (
-    <main className={inter.className}>
+    <div className="relative">
+      <Navbar />
       <Component {...pageProps} />
-    </main>
+      <Footer />
+    </div>
   );
 }

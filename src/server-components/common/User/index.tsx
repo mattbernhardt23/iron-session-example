@@ -28,7 +28,7 @@ export default function User() {
                 </div>
             ) : (
                 <>
-                    <div >
+                    <div className="px-4">
                         <Link href='/user/login' legacyBehavior>
                             <a>
                                 <Button
@@ -39,7 +39,7 @@ export default function User() {
                             </a>
                         </Link>
                     </div>
-                    <div>
+                    <div className="px-4">
                         <Link href='/user/register' legacyBehavior>
                             <a>
                                 <Button
