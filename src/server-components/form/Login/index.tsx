@@ -1,3 +1,4 @@
+"use client"
 import * as css from "@/app/css";
 import useSession from "@/hooks/useSession";
 import { defaultSession } from "@/lib/sessionOptions";
@@ -54,7 +55,7 @@ function LoginForm() {
                     name="email"
                     className={css.input}
                     placeholder=""
-                    defaultValue="bigdog@runallday.com"
+                    defaultValue="nellie.sutton@example.com"
                     required
                     // for demo purposes, disabling autocomplete 1password here
                     autoComplete="off"
@@ -68,7 +69,7 @@ function LoginForm() {
                     name="password"
                     className={css.input}
                     placeholder=""
-                    defaultValue="HugoMyGuy"
+                    defaultValue="1216"
                     required
                     // for demo purposes, disabling autocomplete 1password here
                     autoComplete="off"

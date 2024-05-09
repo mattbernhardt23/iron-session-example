@@ -1,0 +1,45 @@
+[
+    {
+      "topic_id": "660c2ebd1937c17dfd2a8ef0",
+      "creator_id": "660af5781da5b9e1b260c015",
+      "supporting": true,
+      "title": "Nuclear Power is a Viable Solution for Clean Energy",
+      "description": "Despite safety concerns, nuclear power offers a reliable and efficient source of clean energy. Advanced technologies and stringent safety protocols can mitigate risks associated with nuclear power plants. Additionally, nuclear energy production does not emit greenhouse gases, contributing to efforts to combat climate change."
+    },
+    {
+      "topic_id": "660c2ebd1937c17dfd2a8ef0",
+      "creator_id":"660af5781da5b9e1b260c012",
+      "supporting": false,
+      "title": "Nuclear Accidents Pose Grave Threats to Environment and Public Health",
+      "description": "Safety concerns surrounding nuclear power plants are not to be taken lightly. History has shown catastrophic accidents such as Chernobyl and Fukushima, which resulted in devastating environmental contamination and posed serious health risks to nearby populations. Investing in nuclear power presents an unacceptable gamble with potentially irreversible consequences."
+    },
+    {
+      "topic_id": "660c2ebd1937c17dfd2a8ef0",
+      "supporting": true,
+      "creator_id":"660af5771da5b9e1b260c00f",
+      "title": "Nuclear Power is Essential for Energy Security",
+      "description": "In an era of increasing energy demand and geopolitical instability, nuclear power provides a reliable source of energy that reduces dependence on fossil fuels and volatile international markets. By diversifying our energy sources, we can ensure greater energy security for future generations."
+    },
+    {
+      "topic_id": "660c2ebd1937c17dfd2a8ef0",
+      "creator_id":"660af5771da5b9e1b260c00f",
+      "supporting": false,
+      "title": "Renewable Energy Outpaces Nuclear in Safety and Sustainability",
+      "description": "While nuclear power may offer benefits, renewable energy sources such as wind and solar present safer and more sustainable alternatives. Unlike nuclear power, renewables have no risk of catastrophic accidents or long-term radioactive waste disposal issues. Emphasizing renewable energy development is the prudent choice for a sustainable future."
+    },
+    {
+      "topic_id": "660c2ebd1937c17dfd2a8ef0",
+      "creator_id": "660af5771da5b9e1b260c00c",
+      "supporting": true,
+      "title": "Nuclear Power Plants Can be Safely Managed with Modern Technologies",
+      "description": "Safety concerns associated with nuclear power can be addressed through advancements in technology and rigorous regulatory oversight. Modern reactor designs incorporate passive safety features that mitigate the risk of accidents, while enhanced monitoring and emergency response capabilities ensure swift and effective management in the rare event of an incident."
+    },
+    {
+      "topic_id": "660c2ebd1937c17dfd2a8ef0",
+      "creator_id": "660af5781da5b9e1b260c015",
+      "supporting": false,
+      "title": "Nuclear Waste Poses Long-Term Environmental and Health Hazards",
+      "description": "One of the greatest challenges of nuclear power is the disposal of radioactive waste, which remains hazardous for thousands of years. Current storage solutions, such as deep geological repositories, raise concerns about containment integrity and groundwater contamination. Until viable long-term waste management strategies are established, expanding nuclear power poses unacceptable risks to future generations."
+    }
+]
+  

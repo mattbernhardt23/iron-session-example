@@ -1,12 +1,12 @@
-import { ReactNode } from 'react';
+import { MouseEventHandler, ReactNode } from 'react';
 
 interface ButtonProps {
-    children: ReactNode;
+    children?: ReactNode;
     className?: string;
     size?: "sm" | "md" | "lg";
     hoverable?: boolean;
-    variant?: "white" | "red" | "gray" | "lightGray" | "searchLightGray" | "delete";
-    onClick?: () => Promise<void>;
+    variant?: "white" | "red" | "gray" | "lightGray" | "searchLightGray" | "delete" | "objection" | "supporting";
+    onClick?: MouseEventHandler<HTMLButtonElement> | (() => Promise<void>);
 }
 
 const SIZE = {
@@ -27,6 +27,8 @@ export default function Button({
 
     const sizeClass = SIZE[size]
     const variants = {
+        supporting: `rounded-lg bg-green-500 text-white`,
+        objection: `rounded-lg bg-red-500 text-white`,
         white: `rounded-md text-black bg-white`,
         red: `rounded-md text-white bg-red-600 ${hoverable && "hover:bg-red-700"}`,
         gray: `rounded-md text-white bg-gray-600 ${hoverable && "hover:bg-red-700"}`,

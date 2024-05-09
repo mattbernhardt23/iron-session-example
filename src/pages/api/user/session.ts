@@ -28,8 +28,10 @@ export default async function handler(
     await dbConnect();
 
     const user = await User.findOne({ email });
+
+    
     // Check That Passwords Match
-    if (user && (await bcrypt.compare(password, user.password))) {
+    if (user && (await bcrypt.compare(password, user.login.hashedPassword))) {
       const salt = await bcrypt.genSalt(10)
       const hashedPassword = await bcrypt.hash(password, salt)
       // Create the cookie and save

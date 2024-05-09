@@ -2,7 +2,7 @@ import * as css from "@/app/css";
 import useSession from "@/hooks/useSession";
 import { defaultSession } from "@/lib/sessionOptions";
 
-export function Form() {
+export default function Form() {
     const { session, isLoading } = useSession();
 
     if (isLoading) {
@@ -23,7 +23,7 @@ export function Form() {
     return <LoginForm />;
 }
 
-function LoginForm() {
+export function LoginForm() {
     const { login } = useSession();
 
     return (
@@ -54,7 +54,7 @@ function LoginForm() {
                     name="email"
                     className={css.input}
                     placeholder=""
-                    defaultValue="bigdog@runallday.com"
+                    defaultValue="leonard.michel@example.com"
                     required
                     // for demo purposes, disabling autocomplete 1password here
                     autoComplete="off"
@@ -68,7 +68,7 @@ function LoginForm() {
                     name="password"
                     className={css.input}
                     placeholder=""
-                    defaultValue="HugoMyGuy"
+                    defaultValue="1616"
                     required
                     // for demo purposes, disabling autocomplete 1password here
                     autoComplete="off"

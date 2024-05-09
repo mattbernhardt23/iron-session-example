@@ -1,3 +1,4 @@
-export { default as Login } from "./Login";
-export { default as Register } from "./Register";
-export { default as Topic } from "./Topic";
+export { default as ArgumentForm } from "./Argument";
+export { default as LoginForm } from "./Login";
+export { default as RegisterForm } from "./Register";
+export { default as TopicForm } from "./Topic";

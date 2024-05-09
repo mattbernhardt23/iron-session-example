@@ -10,7 +10,8 @@ import dbConnect from "@/lib/dbConnect";
 import bcrypt from "bcrypt";
 
 
-// login
+//  This is totally fucked right now
+// register
 export default async function handler(
   request: NextApiRequest,
   response: NextApiResponse,
@@ -49,7 +50,7 @@ export default async function handler(
     if(userExists) {
       return response.status(400).json({ message: "Email already exists" });
     }
-    // Check That Passwords Match
+    
     // Hash Password
     const salt = await bcrypt.genSalt(10)
     const hashedPassword = await bcrypt.hash(password, salt)

@@ -2,8 +2,7 @@ import useSWR from "swr";
 import { SessionData, defaultSession } from "@/lib/sessionOptions";
 import useSWRMutation from "swr/mutation";
 
-// const sessionApiRoute =
-//   "/app-router-client-component-route-handler-swr/session";
+
 const sessionApiRoute =
   "/api/user/session";
  
@@ -71,7 +70,7 @@ function doLogout(url: string) {
     method: "DELETE",
   });
 }
-
+ 
 export default function useSession() {
   const { data: session, isLoading } = useSWR(
     sessionApiRoute,

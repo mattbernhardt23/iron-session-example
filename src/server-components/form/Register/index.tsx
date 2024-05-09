@@ -1,3 +1,5 @@
+"use client"
+
 import * as css from "@/app/css";
 import useSession from "@/hooks/useSession";
 import { defaultSession } from "@/lib/sessionOptions";

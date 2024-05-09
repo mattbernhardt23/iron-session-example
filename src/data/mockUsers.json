@@ -1,0 +1,122 @@
+[ 
+  {
+    "name": "Alice Smith",
+    "birthdate": "1990-05-15",
+    "email": "alice.smith@example.com",
+    "password": "password123",
+    "admin": true,
+    "contributor": true,
+    "moderator": true,
+    "city": "New York",
+    "state": "NY",
+    "bio": "Nuclear engineer with a passion for sustainable energy solutions."
+  },
+  {
+    "name": "Bob Johnson",
+    "birthdate": "1985-09-20",
+    "email": "bob.johnson@example.com",
+    "password": "pass1234",
+    "admin": true,
+    "contributor": true,
+    "moderator": true,
+    "city": "Los Angeles",
+    "state": "CA",
+    "bio": "Journalist covering nuclear disarmament and international security issues."
+  },
+  {
+    "name": "Emma Davis",
+    "birthdate": "1988-12-10",
+    "email": "emma.davis@example.com",
+    "password": "securepass",
+    "admin": true,
+    "contributor": true,
+    "moderator": true,
+    "city": "Chicago",
+    "state": "IL",
+    "bio": "Nuclear physicist specializing in particle accelerator research."
+  },
+  {
+    "name": "Michael Brown",
+    "birthdate": "1983-07-25",
+    "email": "michael.brown@example.com",
+    "password": "password",
+    "admin": true,
+    "contributor": true,
+    "moderator": true,
+    "city": "Houston",
+    "state": "TX",
+    "bio": "Journalist investigating the environmental impact of nuclear power plants."
+  },
+  {
+    "name": "Olivia Taylor",
+    "birthdate": "1992-03-18",
+    "email": "olivia.taylor@example.com",
+    "password": "123456",
+    "admin": true,
+    "contributor": true,
+    "moderator": true,
+    "city": "Philadelphia",
+    "state": "PA",
+    "bio": "Nuclear engineer working on next-generation reactor designs."
+  },
+  {
+    "name": "James Wilson",
+    "birthdate": "1979-11-05",
+    "email": "james.wilson@example.com",
+    "password": "pass@word",
+    "admin": true,
+    "contributor": true,
+    "moderator": true,
+    "city": "Phoenix",
+    "state": "AZ",
+    "bio": "Nuclear physicist studying nuclear fusion as a clean energy source."
+  },
+  {
+    "name": "Sophia Martinez",
+    "birthdate": "1995-08-30",
+    "email": "sophia.martinez@example.com",
+    "password": "p@ssw0rd",
+    "admin": true,
+    "contributor": true,
+    "moderator": true,
+    "city": "San Antonio",
+    "state": "TX",
+    "bio": "Journalist covering nuclear accidents and safety regulations."
+  },
+  {
+    "name": "William Anderson",
+    "birthdate": "1987-04-12",
+    "email": "william.anderson@example.com",
+    "password": "qwerty",
+    "admin": true,
+    "contributor": true,
+    "moderator": true,
+    "city": "San Diego",
+    "state": "CA",
+    "bio": "Nuclear engineer specializing in radiation protection measures."
+  },
+  {
+    "name": "Isabella Thomas",
+    "birthdate": "1993-01-22",
+    "email": "isabella.thomas@example.com",
+    "password": "password123",
+    "admin": true,
+    "contributor": true,
+    "moderator": true,
+    "city": "Dallas",
+    "state": "TX",
+    "bio": "Nuclear physicist researching nuclear waste management techniques."
+  },
+  {
+    "name": "Daniel Garcia",
+    "birthdate": "1980-06-08",
+    "email": "daniel.garcia@example.com",
+    "password": "password1",
+    "admin": true,
+    "contributor": true,
+    "moderator": true,
+    "city": "San Francisco",
+    "state": "CA",
+    "bio": "Journalist investigating the political aspects of nuclear energy policies."
+  }
+]
