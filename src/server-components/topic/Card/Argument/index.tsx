@@ -16,7 +16,7 @@ const Card: React.FC<Argument> = ({
     const objections = args?.filter((arg) => arg.supporting === false)
 
     return (
-        <div className="bg-white rounded-lg shadow-md p-4 m-4 text-black">
+        <div className="bg-white rounded-lg shadow-md p-4 text-black">
             {/* Header */}
             <div className="flex flex-col justify-between">
                 <div className="mb-2 font-semibold">{title}</div>
@@ -24,7 +24,7 @@ const Card: React.FC<Argument> = ({
                 <ArgumentVote up_votes={up_votes} down_votes={down_votes} />
             </div>
             {/* Description */}
-            <div>
+            <div className="w-full">
                 <Description description={description} />
             </div>
             {/*  */}
@@ -32,10 +32,10 @@ const Card: React.FC<Argument> = ({
                 <NewArgument topic_id={_id} />
             </div>
             <div>
-                {supports ? (
+                {objections ? (
                     <div>
                         <ArgumentList
-                            args={supports}
+                            args={objections}
                         >
                             {argument => {
                                 return (
@@ -58,10 +58,10 @@ const Card: React.FC<Argument> = ({
                 ) : (
                     <div></div>
                 )}
-                {objections ? (
-                    <div>
+                {supports ? (
+                    <div className="">
                         <ArgumentList
-                            args={objections}
+                            args={supports}
                         >
                             {argument => {
                                 return (

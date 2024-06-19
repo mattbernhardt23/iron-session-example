@@ -3,7 +3,7 @@
 import * as css from "@/app/css";
 import useSession from "@/hooks/useSession";
 import useTopic from "@/hooks/useTopic";
-import { defaultSession } from "@/lib/sessionOptions";
+
 
 export default function Form() {
     const { isLoading, session } = useSession();
@@ -51,9 +51,13 @@ function NewTopicForm() {
                 console.log(topicObject)
                 createTopic(topicObject, {
                     optimisticData: {
+                        isLoggedIn: true,
                         topicObject,
                     },
+                }).then((res) => {
+                    console.log("response: ", res);
                 });
+
             }}
             method="POST"
             className={css.form}

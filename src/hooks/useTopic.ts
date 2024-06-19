@@ -1,6 +1,6 @@
 import useSWR from "swr";
 import useSWRMutation from "swr/mutation";
-import { Topic, AddArgument } from "@/lib/types";
+import { TopicType, AddArgument, Feed } from "@/lib/types";
 
 const topicApiRoute = "/api/topic/new";
 
@@ -8,13 +8,16 @@ async function fetchJson<JSON = unknown>(
   input: RequestInfo,
   init?: RequestInit
 ): Promise<JSON> {
-  return fetch(input, {
+  console.log("input: ", input)
+  const res = await fetch(input, {
     headers: {
       accept: "application/json",
       "content-type": "application/json",
     },
     ...init,
-  }).then((res) => res.json());
+  })
+
+  return res.json()
 }
 
 const defaultTopic = {
@@ -39,21 +42,22 @@ const defaultTopic = {
   down_votes: 0,
 };
 
-function doCreateTopic(url: string, { arg }: { arg: Topic }) {
-  return fetchJson<Topic>(url, {
+function doCreateTopic(url: string, { arg }: { arg: TopicType }) {
+
+  const res = fetchJson<TopicType>(url, {
     method: "POST",
     body: JSON.stringify({
-      creator: arg.creator,
-      header: arg.title,
-      description: arg.description,
-      args: arg.args,
+      creator_id: arg.creator._id,
+      title: arg.title,
     }),
   });
+
+  return res;
 }
 
 function doAddArgument(url: string, { arg }: {arg: AddArgument}) {
-  console.log("arg: ", arg)
-  return fetchJson<AddArgument>(url, {
+
+  const res = fetchJson<AddArgument>(url, {
     method: "PUT",
     body: JSON.stringify({
       topic_id: arg.topic_id,
@@ -63,18 +67,21 @@ function doAddArgument(url: string, { arg }: {arg: AddArgument}) {
       supporting: arg.supporting
     })
   });
+
+  return res
 }
 
 function doDeleteTopic(url: string) {
-  return fetchJson<Topic>(url, {
+  return fetchJson<TopicType>(url, {
     method: "DELETE",
   });
 }
 
 export default function useTopic() {
-  const { data: topic, isLoading } = useSWR(topicApiRoute, fetchJson<Topic>, {
+  const { data: topic, isLoading } = useSWR(topicApiRoute, fetchJson<TopicType>, {
     fallbackData: defaultTopic,
   });
+
 
   const { trigger: createTopic } = useSWRMutation(
     "/api/topic/new",

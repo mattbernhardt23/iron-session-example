@@ -25,12 +25,12 @@ export default function Home() {
 
 
   return (
-    <main className="p-10 space-y-5">
+    <main className="">
       <Title subtitle="Protected page" />
       <Suspense fallback={<p className="text-lg">Loading...</p>}>
         <Content />
       </Suspense>
-      <div className="container mx-auto px-4 py-8">
+      <div className=" mx-auto py-8">
         <Suspense fallback={<p className="text-lg">Loading...</p>}>
           <Feed />
         </Suspense>

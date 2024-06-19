@@ -11,16 +11,15 @@ export default async function handler(
   if (request.method === "PUT") {
     try {
       const data = await request.body;
-      console.log("data: ", data)
       const { creator_id, topic_id, supporting, title, description } = data;
 
       await dbConnect();
 
       //   Find the Topic in the Database
       const topic = await Topic.findById(topic_id);
-      console.log("topic_id: ", topic_id)
+      // Find the User to Create the Creator Object
       const user = await User.findById(creator_id);
-      console.log("user_id: ", creator_id)
+      
       // Create the Creator Object
       const creator = {
         _id: user._id,
@@ -43,7 +42,6 @@ export default async function handler(
         description,
         supporting,
       });
-      console.log("arg: ", arg)
 
       // Add the Argument to the args list of the Topic
       topic.args.push(arg);

@@ -1,10 +1,10 @@
 "use client";
-import { Topic } from "@/lib/types";
+import { Argument, TopicType } from "@/lib/types";
 import { Creator, NewArgument, TopicVote } from "@server-components/card";
 import { ArgumentList, ArgumentCard } from "@server-components/topic";
-import { Button } from "@server-components/common"
 
-const Card: React.FC<Topic> = ({
+
+const Card: React.FC<TopicType> = ({
     _id,
     title,
     creator,
@@ -13,12 +13,12 @@ const Card: React.FC<Topic> = ({
     up_votes,
     down_votes,
 }) => {
-    const supports = args?.filter((arg) => arg.supporting === true);
-    const objections = args?.filter((arg) => arg.supporting === false);
+    const supports = args?.filter((arg: Argument) => arg.supporting === true);
+    const objections = args?.filter((arg: Argument) => arg.supporting === false);
 
     return (
-        <div className="bg-white border-black border-4 rounded-lg p-4 mb-8">
-            <div className="font-bold text-2xl pb-2 px-4 border-b-2 border-black text-black">
+        <div className="bg-white border-slate-800 border-b-4 drop-shadow-lg m-2 rounded-lg p-4">
+            <div className="text-slate-800 font-bold text-2xl pb-2 px-4 border-b-2 border-black ">
                 <div>
                     <div>{title}</div>
                     <div className="py-2 text-lg">
@@ -30,17 +30,12 @@ const Card: React.FC<Topic> = ({
                 </div>
             </div>
             <div>{description}</div>
-            <div>
-                <div>
-                    <NewArgument topic_id={_id} />
-                </div>
-            </div>
-            <div className="flex flex-row">
-                <div>
+            <div className="flex flex-row w-full">
+                <div className="mr-1">
                     {objections.length > 0 && (
                         <div className="flex flex-col items-center">
-                            <div className="w-full border-2 border-black rounded-lg m-2">
-                                <div className="font-semibold text-center p-2">
+                            <div className="w-full border-b-2 text-rose-900 border-b-rose-900  m-2">
+                                <div className="text-2xl font-semibold text-center p-2">
                                     Objections
                                 </div>
                             </div>
@@ -70,10 +65,10 @@ const Card: React.FC<Topic> = ({
 
                 <div>
                     {supports.length > 0 && (
-                        <div>
+                        <div className="ml-1">
                             <div>
-                                <div className="w-full border-2 border-black rounded-lg m-2">
-                                    <div className="font-semibold text-center p-2">
+                                <div className="w-full border-b-2 text-emerald-900 border-b-emerald-900  m-2">
+                                    <div className="text-2xl font-semibold text-center p-2">
                                         Supporting Arguments
                                     </div>
                                 </div>
@@ -99,6 +94,12 @@ const Card: React.FC<Topic> = ({
                     )}
                 </div>
             </div>
+            <div>
+                <div>
+                    <NewArgument topic_id={_id} />
+                </div>
+            </div>
+
         </div>
     );
 };

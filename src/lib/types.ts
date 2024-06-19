@@ -5,8 +5,8 @@ export interface Feed {
 }
  
 export interface TopicList { 
-    topics: Topic[];
-    children: (topic: Topic) => ReactNode;
+    topics: TopicType[];
+    children: (topic: TopicType) => ReactNode;
  }
 
 export interface Creator {
@@ -23,7 +23,7 @@ export interface Creator {
       };
 }
 
-export interface Topic {
+export interface TopicType {
     _id: string;
     creator: Creator;
     title: string;

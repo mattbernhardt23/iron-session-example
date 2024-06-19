@@ -5,7 +5,7 @@ interface ButtonProps {
     className?: string;
     size?: "sm" | "md" | "lg";
     hoverable?: boolean;
-    variant?: "white" | "red" | "gray" | "lightGray" | "searchLightGray" | "delete" | "objection" | "supporting";
+    variant?: "white" | "red" | "gray" | "lightGray" | "searchLightGray" | "delete" | "objection" | "supporting" | "newTopic" | "argObjection" | "argSupporting";
     onClick?: MouseEventHandler<HTMLButtonElement> | (() => Promise<void>);
 }
 
@@ -27,8 +27,11 @@ export default function Button({
 
     const sizeClass = SIZE[size]
     const variants = {
-        supporting: `rounded-lg bg-green-500 text-white`,
-        objection: `rounded-lg bg-red-500 text-white`,
+        supporting: `w-full rounded-lg bg-gradient-to-l to-emerald-400 from-emerald-900 border-2 border-emerald-900 text-white font-bold text-sm lg:text-md xl:text-xl`,
+        objection: `w-full rounded-lg bg-gradient-to-l to-rose-800 from-rose-400 border-2 border-rose-800 text-white font-bold text-sm lg:text-md xl:text-xl`,
+        argSupporting: `w-full rounded-lg bg-gradient-to-l to-emerald-400 from-emerald-900 border-2 border-emerald-900 text-white font-bold text-xs lg:text-sm xl:text-lg`,
+        argObjection: `w-full rounded-lg bg-gradient-to-l to-rose-800 from-rose-400 border-2 border-rose-800 text-white font-bold text-xs lg:text-sm xl:text-lg`,
+        newTopic: `w-full rounded-lg bg-gradient-to-r from-blue-800 via-blue-400 to-blue-800 border-2 border-blue-800 text-blue-950 font-bold text-xl py-2`,
         white: `rounded-md text-black bg-white`,
         red: `rounded-md text-white bg-red-600 ${hoverable && "hover:bg-red-700"}`,
         gray: `rounded-md text-white bg-gray-600 ${hoverable && "hover:bg-red-700"}`,
@@ -41,7 +44,7 @@ export default function Button({
         <button
             {...rest}
             onClick={onClick}
-            className={`${sizeClass} disabled:opacity-50 disabled:cursor-not-allowed borderfont-medium ${className} ${variants[variant]}`}>
+            className={`${sizeClass} drop-shadow-lg disabled:opacity-50 disabled:cursor-not-allowed borderfont-medium ${className} ${variants[variant]}`}>
             {children}
         </button>
     )

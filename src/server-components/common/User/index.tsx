@@ -13,40 +13,30 @@ export default function User() {
         <div className='flex space-x-2 mr-4' >
             {session.isLoggedIn ? (
                 <div>
-                    <Button
-                        variant="lightGray"
+                    <button
                         onClick={() => new Promise<void>((resolve) => {
                             logout(null, {
                                 optimisticData: defaultSession,
                             });
                             resolve();
                         })}
-
                     >
                         Sign Out
-                    </Button>
+                    </button>
                 </div>
             ) : (
                 <>
                     <div className="px-4">
                         <Link href='/user/login' legacyBehavior>
                             <a>
-                                <Button
-                                    variant='gray'
-                                >
-                                    Sign In
-                                </Button>
+                                Sign In
                             </a>
                         </Link>
                     </div>
                     <div className="px-4">
                         <Link href='/user/register' legacyBehavior>
                             <a>
-                                <Button
-                                    variant='gray'
-                                >
-                                    Register
-                                </Button>
+                                Register
                             </a>
                         </Link>
                     </div>
