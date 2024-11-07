@@ -24,7 +24,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   }, []);
 
   return (
-    <div className="relative">
+    <div className="relative bg-black">
       <Navbar />
       <Component {...pageProps} />
       <Footer />

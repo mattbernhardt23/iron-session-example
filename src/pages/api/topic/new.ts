@@ -22,7 +22,7 @@ export default async function handler(
   if (request.method === "POST") {
     try {
       const data = await request.body;
-      const { creator_id, title } = data;
+      const { creator_id, title, description } = data;
       console.log("data: ", data)
       await dbConnect();
       // Find the User to Create the Creator Object
@@ -46,6 +46,7 @@ export default async function handler(
       const topic = await Topic.create({
         creator,
         title,
+        description
       });
       console.log("topic: ", topic)
       

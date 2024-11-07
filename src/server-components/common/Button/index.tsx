@@ -27,10 +27,10 @@ export default function Button({
 
     const sizeClass = SIZE[size]
     const variants = {
-        supporting: `w-full rounded-lg bg-gradient-to-l to-emerald-400 from-emerald-900 border-2 border-emerald-900 text-white font-bold text-sm lg:text-md xl:text-xl`,
-        objection: `w-full rounded-lg bg-gradient-to-l to-rose-800 from-rose-400 border-2 border-rose-800 text-white font-bold text-sm lg:text-md xl:text-xl`,
-        argSupporting: `w-full rounded-lg bg-gradient-to-l to-emerald-400 from-emerald-900 border-2 border-emerald-900 text-white font-bold text-xs lg:text-sm xl:text-lg`,
-        argObjection: `w-full rounded-lg bg-gradient-to-l to-rose-800 from-rose-400 border-2 border-rose-800 text-white font-bold text-xs lg:text-sm xl:text-lg`,
+        supporting: `w-full rounded-lg bg-white border-2 border-emerald-900 text-emerald-900 hover:bg-emerald-900 hover:text-white font-bold text-sm lg:text-md xl:text-xl`,
+        objection: `w-full rounded-lg bg-white border-2 border-rose-800 text-rose-800 hover:bg-rose-800 hover:text-white font-bold text-sm lg:text-md xl:text-xl`,
+        argSupporting: `w-full rounded-lg bg-white border-2 border-emerald-900 text-emerald-900 hover:bg-emerald-900 hover:text-white font-bold text-xs lg:text-sm xl:text-lg`,
+        argObjection: `w-full rounded-lg bg-white border-2 border-rose-800 text-rose-800 hover:bg-rose-800 hover:text-white font-bold text-xs lg:text-sm xl:text-lg`,
         newTopic: `w-full rounded-lg bg-gradient-to-r from-blue-800 via-blue-400 to-blue-800 border-2 border-blue-800 text-blue-950 font-bold text-xl py-2`,
         white: `rounded-md text-black bg-white`,
         red: `rounded-md text-white bg-red-600 ${hoverable && "hover:bg-red-700"}`,

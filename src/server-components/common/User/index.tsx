@@ -14,6 +14,7 @@ export default function User() {
             {session.isLoggedIn ? (
                 <div>
                     <button
+                        className=" hover:text-blue-700"
                         onClick={() => new Promise<void>((resolve) => {
                             logout(null, {
                                 optimisticData: defaultSession,
@@ -26,14 +27,14 @@ export default function User() {
                 </div>
             ) : (
                 <>
-                    <div className="px-4">
+                    <div className="px-4 hover:text-blue-700">
                         <Link href='/user/login' legacyBehavior>
                             <a>
                                 Sign In
                             </a>
                         </Link>
                     </div>
-                    <div className="px-4">
+                    <div className="px-4 hover:text-blue-700">
                         <Link href='/user/register' legacyBehavior>
                             <a>
                                 Register

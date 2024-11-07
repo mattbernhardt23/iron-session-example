@@ -22,7 +22,7 @@ export interface Creator {
         thumbnail: string;
       };
 }
-
+ 
 export interface TopicType {
     _id: string;
     creator: Creator;

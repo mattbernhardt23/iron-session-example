@@ -49,6 +49,7 @@ function doCreateTopic(url: string, { arg }: { arg: TopicType }) {
     body: JSON.stringify({
       creator_id: arg.creator._id,
       title: arg.title,
+      description: arg.description,
     }),
   });
 

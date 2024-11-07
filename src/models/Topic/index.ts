@@ -19,8 +19,6 @@ export interface Topics extends mongoose.Document {
   title: string;
   description: string;
   args: Argument[];
-  up_votes: number;
-  down_votes: number;
   date_created: Date;
 }
 
@@ -41,8 +39,6 @@ const TopicSchema = new mongoose.Schema<Topics>({
   title: { type: String, required: true },
   description: { type: String, required: false },
   date_created: { type: Date, required: false, default: new Date() },
-  up_votes: { type: Number, default: 0 },
-  down_votes: { type: Number, default: 0 },
   args: [ArgumentSchema],
 });
 

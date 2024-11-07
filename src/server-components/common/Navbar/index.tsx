@@ -1,44 +1,55 @@
-import Link from "next/link"
-import { User } from '@/server-components/common'
+"use client"
+import { useEffect, useState } from 'react';
+import Link from 'next/link';
+import { User, Search } from '@/server-components/common';
+import { NewTopic } from '@/server-components/feed';
+
 
 export default function Navbar() {
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 50) {
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     return (
-        <section>
-            <div className="relative py-2">
-                <nav className="relative" aria-label="Global">
-                    <div className="flex flex-row justify-between sticky w-full border-b-4 border-gray-600 text-xl font-bold">
-                        <div className="flex justify-items-center">
-                            <div className="px-4">
-                                <Link href='/' legacyBehavior>
-                                    <a>
-                                        Home
-                                    </a>
-                                </Link>
-                            </div>
-                            <div className="px-4">
-                                <Link href='/about' legacyBehavior>
-                                    <a>
-                                        About
-                                    </a>
-                                </Link>
-                            </div>
-                            <div className="px-4">
-                                <Link href='/topic/new' legacyBehavior>
-                                    <a>
-                                        New
-                                    </a>
-                                </Link>
-                            </div>
+        <header>
+            <nav className={`fixed top-0 z-50 py-2 ${isScrolled ? 'bg-black text-white' : 'bg-white text-black'} w-full`} aria-label="Global">
+                <div className="flex flex-row justify-between items-center w-full text-xl font-bold"
+
+                >
+                    {/* Left-side Links */}
+                    <div className="flex">
+                        <div className="px-4 hover:text-blue-700">
+                            <Link href="/" legacyBehavior>
+                                <a>Public Square</a>
+                            </Link>
                         </div>
-                        <div className="flex flex-row items-center px-4">
-                            <User />
+                        <div className="px-4">
+                            <NewTopic />
                         </div>
                     </div>
-                </nav>
-            </div>
-        </section>
 
-    )
+                    {/* Centered Search */}
+                    <div className="flex-grow">
+                        <Search />
+                    </div>
+
+                    {/* Right-side User */}
+                    <div className="px-4">
+                        <User />
+                    </div>
+                </div>
+            </nav>
+        </header>
+    );
 }
-

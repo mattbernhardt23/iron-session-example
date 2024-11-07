@@ -16,7 +16,7 @@ async function fetchJson<JSON = unknown>(
     ...init,
   }).then((res) => res.json());
 }
-
+ 
 
 // Define the defaultFeed object
 const defaultFeed: Feed = {

@@ -1,5 +1,6 @@
 import mongoose, { Schema } from "mongoose";
 import { Topics } from "@models/Topic";
+import { Argument } from "@models/Argument";
 
 // At some point, we would like to add in something for professional credentials to be displayed.
 // In order to do that, we need to figure out what to do with university affiliations, places of employment, job titles, educational background, etc.
@@ -64,6 +65,8 @@ export interface Users extends mongoose.Document {
   contributor: boolean;
   moderator: boolean;
   bio?: string;
+  topicVotes: Topics[];
+  argumentVotes: Argument[];
 }
 
 const UserSchema = new mongoose.Schema<Users>({
@@ -126,7 +129,9 @@ const UserSchema = new mongoose.Schema<Users>({
   contributor: { type: Boolean, required: true, default: false },
   moderator: { type: Boolean, required: true, default: false },
   bio: { type: String, required: false },
-//   topics: [{ type: Schema.Types.ObjectId, ref: "Topics", required: false }],
+  topicVotes: [{ type: Schema.Types.ObjectId, ref: "Topics", required: false }],
+  argumentVotes: [{ type: Schema.Types.ObjectId, ref: "Arguments", required: false }],
+
 });
 
 export default mongoose.models.User ||

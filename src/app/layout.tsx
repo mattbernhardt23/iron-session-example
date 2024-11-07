@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`relative min-h-screen ${inter.className}`}>
+      <body className={`relative min-h-screen ${inter.className} bg-black`}>
         <Navbar />
         <Fathom />
         <main className={inter.className}>{children}</main>
